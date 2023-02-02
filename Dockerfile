@@ -17,4 +17,4 @@ ENV PYTHONUNBUFFERED 1
 EXPOSE 8200
 
 # Define the command to run when the container starts
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8200"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8200"]

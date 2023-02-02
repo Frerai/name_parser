@@ -1,4 +1,14 @@
 def full_name_parser(full_name: str):
+    """Function for parsing names as full names and returns name parts
+    as a tuple consisting of a first name and last name.
+
+    :args:
+    full_name as input string in any way desired.
+
+    :returns:
+    The full name split in parts. Will return the name parts in a tuple
+    as first name and last name.
+    """
     # TODO add comments
     parts = full_name.split()
     if len(parts) == 0:

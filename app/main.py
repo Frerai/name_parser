@@ -2,25 +2,21 @@ from fastapi import FastAPI
 from fastapi import status
 from fastapi import HTTPException
 
-from pydantic import BaseModel
-
-from parser import full_name_parser
+from app.utils import full_name_parser
+from app.models.writers import ParsedNameResponse
 
 app = FastAPI()
 
 
-class ParsedNameResponse(BaseModel):
-    first_name: str
-    last_name: str
-
-
-@app.get("/")
+@app.get("/v1")
 async def another_parse():
+    """Router to the frontpage."""
     return "Welcome to the Name Parser!"
 
 
 @app.get("/v1/parse", response_model=ParsedNameResponse, status_code=status.HTTP_200_OK)
 async def parse_name(full_name: str) -> ParsedNameResponse:
+    """Router to name parser."""
     full_name = full_name.strip()
     if len(full_name) == 0:
         raise HTTPException(
