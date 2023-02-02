@@ -3,7 +3,7 @@ import pytest
 from hypothesis import strategies as st
 from hypothesis import given
 
-from app.utils import full_name_parser
+from app.parser import full_name_parser
 
 
 @pytest.mark.parametrize(
@@ -41,7 +41,7 @@ def test_parser(full_name: str, expected_name: str) -> None:
     st.text(alphabet=st.characters(whitelist_categories=("L",)), min_size=1),
 )
 def test_parser_with_hypothesis_randomly_generated_characters(
-    given_first_name: str, given_symbol: str, given_last_name: str
+        given_first_name: str, given_symbol: str, given_last_name: str
 ) -> None:
     """Tests that parser will handle any combination of letters and
     characters to pass the parsing.
@@ -55,3 +55,5 @@ def test_parser_with_hypothesis_randomly_generated_characters(
     assert given_first_name.title() == formatted_data[0]
     assert given_last_name.title() == formatted_data[1]
     assert given_symbol not in formatted_data
+
+
