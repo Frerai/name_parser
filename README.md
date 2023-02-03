@@ -7,7 +7,7 @@ The "Name Parser" is a coding assignment. It's a tool designed to take an input 
 
 In order to use this service, follow the steps below:
 
-1. Clone the remote repository: `$ git clone <repository-url>`
+1. Clone the remote repository: `$ git clone <git@github.com:Frerai/name_parser.git>`
 
 2. Build the Docker image: `$ docker build -t my-name-parser-app .`
 
