@@ -55,5 +55,3 @@ def test_parser_with_hypothesis_randomly_generated_characters(
     assert given_first_name.title() == formatted_data[0]
     assert given_last_name.title() == formatted_data[1]
     assert given_symbol not in formatted_data
-
-
