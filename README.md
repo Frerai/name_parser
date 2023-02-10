@@ -3,6 +3,8 @@ README.md
 
 The "Name Parser" is a coding assignment. It's a tool designed to take an input string of a full name in various formats, and parse them in parts consisting of a first name and last name, regardless of the input format.
 
+The assignment is written as a REST service with FastAPI framework. 
+
 ## Setup
 
 In order to use this service, follow the steps below:

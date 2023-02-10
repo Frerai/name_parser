@@ -1,4 +1,5 @@
 from typing import Tuple
+import emoji
 
 
 def full_name_parser(full_name: str) -> Tuple[str, str]:
@@ -41,3 +42,21 @@ def full_name_parser(full_name: str) -> Tuple[str, str]:
         last_name = parts[-1]
 
     return first_name.title(), last_name.title()
+
+
+def validate_input(full_name: str) -> bool:
+    """Function for validating inputs. If the input string contains any
+    unicode characters used to form emojis, this will return True.
+
+    :arg:
+    Any input string.
+
+    :returns:
+    True if the input string is an emoji according to the Emoji package.
+    """
+    # Will convert the input into string, using the packages "demojize" method.
+    demojized_full_name = emoji.demojize(full_name)
+
+    # If "full_name" contained any unicode characters from emojis, the input is no longer the same.
+    if demojized_full_name != full_name:
+        return True
